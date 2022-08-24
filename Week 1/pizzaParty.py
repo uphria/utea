@@ -1,0 +1,5 @@
+numSlices = input("Enter the number of slices: ")
+numGuests = input("Enter the number of guests: ")
+slicesGuests = str(int(numSlices)//int(numGuests))
+leftOver = str(int(numSlices) % int(numGuests))
+print("There are " + slicesGuests + " slices per person and " + leftOver + " slice(s) left.")
