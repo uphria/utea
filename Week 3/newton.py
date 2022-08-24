@@ -1,9 +1,5 @@
 import math
 
-def xdir(mag, dir):
-    force = mag*math.cos(dir*math.pi/180)
-    return force
-
 def result(mass, fileMag, fileDir):
     dataMag = open(fileMag, 'r')
     dataDir = open(fileDir, 'r')
