@@ -51,30 +51,25 @@ def choiceB(total, arrb, arrb1):
 
 def compC(total1, arrc, arrc1):
     if total1 == 0:
-        print("test")
         p1c = random.choice(CHOICE_VALID)
         p2c = random.choice(CHOICE_VALID)
         arrc += p2c
         arrc1 += p1c
         arrc1 += p2c
     else:
-        print("test")
         tempc = arrc[0]
         tempc1 = arrc1[0]
         if tempc == winCondition(tempc1, tempc):
-            print("prev comp win")
             p2c = tempc
             p1c = random.choice(CHOICE_VALID)
             while p1c in arrc1:
                 p1c = random.choice(CHOICE_VALID)
         elif tempc1 == winCondition(tempc1, tempc):     
-            print("prev per win")
             p1c = tempc
             p2c = random.choice(CHOICE_VALID)
             while p2c in arrc:
                 p2c = random.choice(CHOICE_VALID)
         else:
-            print("prev tie")
             p1c = random.choice(CHOICE_VALID)
             while p1c in arrc1:
                 p1c = random.choice(CHOICE_VALID)
