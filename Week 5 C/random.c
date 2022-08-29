@@ -20,6 +20,9 @@ int main(){
   print(list, items);
 }
 
+//checks in list if the generated number exists already
+//if it does, return 0
+//if it doesn't, return 1 and add the number to the list
 int add(int list[], int items, int number){
   int index = 0;
   for (; index < items && list[index] != 0; index++){
@@ -31,6 +34,7 @@ int add(int list[], int items, int number){
   return 1;
 }
 
+//generates random number using srand
 int generateNumber(int low, int high){
   return (rand()%(high-low+1))+ low;
 }
@@ -54,6 +58,8 @@ void print(int list[], int items){
   printf("\n");
 }
 
+//reset list so that all values are initialized to 0, or else you get a bunch of garbage values
+//in that case, the for loop would see that the number isn't 0, but the list index isn't the generated number so it doesn't return 0 and the garbage value is successfully added in
 void resetList(int list[], int items){
   for (int index = 0; index < items; index++){
     list[index] = 0;
