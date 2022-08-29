@@ -26,6 +26,7 @@ void print(char triangle[][MAX], int number){
   }
 }
 
+//creates n x n table filled with blank character
 void emptyTriangle(char shape[][MAX], char symbol){
   for (int row = 0; row < MAX; row++){
     for (int col = 0; col < MAX; col++){
@@ -34,6 +35,8 @@ void emptyTriangle(char shape[][MAX], char symbol){
   }
 }
 
+//changes characters in the appropriate locations to *
+//table is symmetrical wrt middle
 void fillTriangle(char triangle[][MAX], int number, char symbol){
   int rows = number;
   int cols = 2*number - 1;
@@ -44,15 +47,18 @@ void fillTriangle(char triangle[][MAX], int number, char symbol){
     if (row % 2 == 0){
       left = middle;
       right = middle;
+      //rows 0, 2, 4 etc. middle value gets a star
     } else {
       left = middle - 1;
       right = middle + 1;
+      //1, 3, 5 etc. all middle - n++ gets star
     }
     while (right - middle <= row){
       triangle[row][left] = '*';
       triangle[row][right] = '*';
       right += 2;
       left -= 2;
+      //this one allows iteration through the entire row, while the for iterates through different rows
     }
   }
 }
